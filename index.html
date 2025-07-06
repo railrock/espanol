@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprender Español Loco</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            background-color: #2c5282;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+        
+        .debug-info {
+            background-color: #fff8e1;
+            border: 1px solid #ffd54f;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 800px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+        
+        .debug-info h2 {
+            color: #d32f2f;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .debug-info ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        
+        .debug-info li {
+            margin-bottom: 8px;
+        }
+        
+        .debug-info code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        .alphabet-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .letter-link {
+            display: block;
+            width: 70px;
+            height: 70px;
+            background-color: #4299e1;
+            color: white;
+            font-size: 2.2rem;
+            font-weight: bold;
+            text-align: center;
+            line-height: 70px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .letter-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+            background-color: #3182ce;
+        }
+        
+        .letter-link.active {
+            background-color: #48bb78;
+            transform: scale(1.1);
+        }
+        
+        .special-letters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .special-letter {
+            display: block;
+            background-color: #48bb78;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .special-letter:hover {
+            background-color: #38a169;
+            transform: translateY(-3px);
+        }
+        
+        .content {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .content h2 {
+            color: #2c5282;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .instructions {
+            background-color: #ebf8ff;
+            border-left: 4px solid #4299e1;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .instructions h3 {
+            color: #2b6cb0;
+            margin-bottom: 10px;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        .status-box {
+            background-color: #f0fff4;
+            border: 1px solid #48bb78;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .status-box h3 {
+            color: #2f855a;
+            margin-bottom: 15px;
+        }
+        
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #4299e1;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #718096;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 600px) {
+            .alphabet-container {
+                gap: 10px;
+            }
+            
+            .letter-link {
+                width: 55px;
+                height: 55px;
+                font-size: 1.8rem;
+                line-height: 55px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aprender Español Loco</h1>
+    </header>
+    
+    <div class="debug-info">
+        <h2>⚠️ Solución de problemas de navegación</h2>
+        <p>Si los enlaces no funcionan, verifique:</p>
+        <ul>
+            <li>Los archivos HTML (A.html, B.html, etc.) están en el <strong>mismo directorio</strong> que index.html</li>
+            <li>Los nombres de archivo son <strong>exactamente iguales</strong> (GitHub distingue mayúsculas y minúsculas)</li>
+            <li>Ha esperado 1-3 minutos después de cargar los archivos en GitHub</li>
+            <li>Pruebe a <strong>recargar la página</strong> sin caché (Ctrl+F5 o Cmd+Shift+R)</li>
+        </ul>
+        <p>Enlace actual de prueba: <a href="A.html" id="test-link">A.html</a> | Estado: <span id="link-status">No verificado</span></p>
+    </div>
+    
+    <div class="alphabet-container">
+        <a href="A.html" class="letter-link">A</a>
+        <a href="B.html" class="letter-link">B</a>
+        <a href="C.html" class="letter-link">C</a>
+        <a href="D.html" class="letter-link">D</a>
+        <a href="E.html" class="letter-link">E</a>
+        <a href="F.html" class="letter-link">F</a>
+        <a href="G.html" class="letter-link">G</a>
+        <a href="H.html" class="letter-link">H</a>
+        <a href="I.html" class="letter-link">I</a>
+        <a href="J.html" class="letter-link">J</a>
+        <a href="K.html" class="letter-link">K</a>
+        <a href="L.html" class="letter-link">L</a>
+        <a href="M.html" class="letter-link">M</a>
+        <a href="N.html" class="letter-link">N</a>
+        <a href="Ntilde.html" class="letter-link">Ñ</a>
+        <a href="O.html" class="letter-link">O</a>
+        <a href="P.html" class="letter-link">P</a>
+        <a href="Q.html" class="letter-link">Q</a>
+        <a href="R.html" class="letter-link">R</a>
+        <a href="S.html" class="letter-link">S</a>
+        <a href="T.html" class="letter-link">T</a>
+        <a href="U.html" class="letter-link">U</a>
+        <a href="V.html" class="letter-link">V</a>
+        <a href="W.html" class="letter-link">W</a>
+        <a href="X.html" class="letter-link">X</a>
+        <a href="Y.html" class="letter-link">Y</a>
+        <a href="Z.html" class="letter-link">Z</a>
+    </div>
+    
+    <div class="special-letters">
+        <a href="Ch.html" class="special-letter">Ch</a>
+        <a href="Ll.html" class="special-letter">Ll</a>
+        <a href="Rr.html" class="special-letter">Rr</a>
+    </div>
+    
+    <div class="content">
+        <h2>Página de demostración - Letra A</h2>
+        
+        <div class="instructions">
+            <h3>Instrucciones para crear páginas de letras:</h3>
+            <ol>
+                <li>Cree un nuevo archivo para cada letra (ej. B.html, C.html)</li>
+                <li>Copie el siguiente código básico en cada archivo</li>
+                <li>Personalice el contenido para cada letra</li>
+                <li>Suba todos los archivos a su repositorio de GitHub</li>
+            </ol>
+        </div>
+        
+        <div class="status-box">
+            <h3>Verificación de enlace activo</h3>
+            <p>Esta sección demuestra que el enlace a A.html está funcionando correctamente.</p>
+            <p>Estado actual: <strong id="status-text">Comprobando...</strong></p>
+        </div>
+        
+        <a href="index.html" class="back-link">← Volver al índice</a>
+    </div>
+    
+    <footer>
+        <p>Aprender Español Loco - © 2023 | Creado con GitHub Pages</p>
+    </footer>
+    
+    <script>
+        // Verificación automática del enlace a A.html
+        document.addEventListener('DOMContentLoaded', function() {
+            const testLink = document.getElementById('test-link');
+            const linkStatus = document.getElementById('link-status');
+            const statusText = document.getElementById('status-text');
+            
+            // Comprobar si estamos en la página de la letra A
+            if (window.location.pathname.includes('A.html')) {
+                document.title = "A - Aprender Español Loco";
+                document.querySelector('h2').textContent = "Página de la letra A";
+                statusText.textContent = "¡Esta página demuestra que el enlace funciona correctamente!";
+                statusText.style.color = "#2f855a";
+                
+                // Marcar el enlace A como activo
+                const links = document.querySelectorAll('.letter-link');
+                links.forEach(link => {
+                    if (link.textContent === 'A') {
+                        link.classList.add('active');
+                    }
+                });
+            } 
+            // Comprobación de disponibilidad de A.html
+            else {
+                fetch('A.html')
+                    .then(response => {
+                        if (response.status === 200) {
+                            linkStatus.textContent = '✅ A.html encontrado';
+                            linkStatus.style.color = 'green';
+                            statusText.textContent = 'A.html está disponible y accesible';
+                            statusText.style.color = "#2f855a";
+                        } else {
+                            linkStatus.textContent = '❌ A.html no encontrado';
+                            linkStatus.style.color = 'red';
+                            statusText.textContent = 'Error: A.html no está disponible (código: ' + response.status + ')';
+                            statusText.style.color = "#c53030";
+                        }
+                    })
+                    .catch(error => {
+                        linkStatus.textContent = '❌ Error de red: ' + error.message;
+                        linkStatus.style.color = 'red';
+                        statusText.textContent = 'Error al intentar acceder a A.html';
+                        statusText.style.color = "#c53030";
+                    });
+            }
+        });
+    </script>
+</body>
+</html>
