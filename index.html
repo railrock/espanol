@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprender Español Loco</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa, #e4edf5);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            text-align: center;
+        }
+        
+        header {
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #f0f4f8;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: #2c5282;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #4a5568;
+            opacity: 0.85;
+        }
+        
+        .alphabet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 16px;
+            margin-top: 30px;
+        }
+        
+        .letter-card {
+            background: linear-gradient(to bottom right, #4299e1, #3182ce);
+            color: white;
+            border-radius: 12px;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .letter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(50, 50, 93, 0.2), 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+        
+        .letter-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2));
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+        
+        .letter-card:hover::before {
+            transform: translateY(100%) rotate(45deg);
+        }
+        
+        .letter {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+        
+        .letter-label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .special-letters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .special-letter {
+            background: linear-gradient(to bottom right, #48bb78, #38a169);
+            color: white;
+            border-radius: 8px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+            font-weight: 500;
+        }
+        
+        .special-letter:hover {
+            transform: translateY(-3px);
+        }
+        
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f4f8;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .alphabet-grid {
+                grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+                gap: 12px;
+            }
+            
+            .letter-card {
+                height: 65px;
+            }
+            
+            .letter {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Aprender Español Loco</h1>
+            <p class="subtitle">Diccionario visual de español para principiantes</p>
+        </header>
+        
+        <div class="alphabet-grid">
+            <div class="letter-card">
+                <span class="letter">A</span>
+                <span class="letter-label">a</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">B</span>
+                <span class="letter-label">be</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">C</span>
+                <span class="letter-label">ce</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">D</span>
+                <span class="letter-label">de</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">E</span>
+                <span class="letter-label">e</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">F</span>
+                <span class="letter-label">efe</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">G</span>
+                <span class="letter-label">ge</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">H</span>
+                <span class="letter-label">hache</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">I</span>
+                <span class="letter-label">i</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">J</span>
+                <span class="letter-label">jota</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">K</span>
+                <span class="letter-label">ka</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">L</span>
+                <span class="letter-label">ele</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">M</span>
+                <span class="letter-label">eme</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">N</span>
+                <span class="letter-label">ene</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">Ñ</span>
+                <span class="letter-label">eñe</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">O</span>
+                <span class="letter-label">o</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">P</span>
+                <span class="letter-label">pe</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">Q</span>
+                <span class="letter-label">cu</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">R</span>
+                <span class="letter-label">erre</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">S</span>
+                <span class="letter-label">ese</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">T</span>
+                <span class="letter-label">te</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">U</span>
+                <span class="letter-label">u</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">V</span>
+                <span class="letter-label">uve</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">W</span>
+                <span class="letter-label">uve doble</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">X</span>
+                <span class="letter-label">equis</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">Y</span>
+                <span class="letter-label">ye</span>
+            </div>
+            <div class="letter-card">
+                <span class="letter">Z</span>
+                <span class="letter-label">zeta</span>
+            </div>
+        </div>
+        
+        <div class="special-letters">
+            <div class="special-letter">Ch</div>
+            <div class="special-letter">Ll</div>
+            <div class="special-letter">Rr</div>
+        </div>
+        
+        <footer>
+            <p>Aprender Español Loco - © 2023 | Diccionario visual para estudiantes de español</p>
+        </footer>
+    </div>
+
+    <script>
+        // 添加字母点击事件
+        document.querySelectorAll('.letter-card, .special-letter').forEach(element => {
+            element.addEventListener('click', function() {
+                const letter = this.querySelector('.letter') ? 
+                              this.querySelector('.letter').textContent : 
+                              this.textContent;
+                              
+                alert(`Haga clic en la letra: ${letter}\n\nEsta función lo llevará a la página ${letter}.html`);
+                
+                // 在实际网站中，您可以使用：
+                // window.location.href = `${letter}.html`;
+            });
+        });
+    </script>
+</body>
+</html>
